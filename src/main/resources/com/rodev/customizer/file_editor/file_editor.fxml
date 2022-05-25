@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="10"
+      fx:controller="com.rodev.customizer.file_editor.FileEditorController"
+      minHeight="500.0" minWidth="720.0"
+      prefHeight="500.0" prefWidth="720.0">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <HBox VBox.vgrow="ALWAYS">
+        <VBox HBox.hgrow="ALWAYS"
+              maxWidth="300"
+              minWidth="150">
+            <Label text="Contents"/>
+            <AnchorPane VBox.vgrow="ALWAYS">
+                <TreeView
+                        fx:id="treeView"
+                        AnchorPane.bottomAnchor="0"
+                        AnchorPane.leftAnchor="0"
+                        AnchorPane.rightAnchor="0"
+                        AnchorPane.topAnchor="0">
+                </TreeView>
+            </AnchorPane>
+        </VBox>
+
+        <VBox HBox.hgrow="ALWAYS"
+              maxWidth="Infinity"
+              minWidth="300">
+            <Label text="Original text"/>
+            <AnchorPane VBox.vgrow="ALWAYS">
+                <TextArea
+                        fx:id="originalText"
+                        prefColumnCount="10"
+                        wrapText="true"
+                        AnchorPane.bottomAnchor="0"
+                        AnchorPane.leftAnchor="0"
+                        AnchorPane.rightAnchor="0"
+                        AnchorPane.topAnchor="0"
+                        prefRowCount="15">
+                </TextArea>
+            </AnchorPane>
+            <Label text="Your input"/>
+            <AnchorPane VBox.vgrow="ALWAYS"
+                        maxHeight="Infinity"
+                        minHeight="300">
+                <TextArea
+                        fx:id="inputText"
+                        prefColumnCount="10"
+                        wrapText="true"
+                        AnchorPane.bottomAnchor="0"
+                        AnchorPane.leftAnchor="0"
+                        AnchorPane.rightAnchor="0"
+                        AnchorPane.topAnchor="0"
+                        prefRowCount="15">
+                </TextArea>
+            </AnchorPane>
+        </VBox>
+    </HBox>
+
+    <HBox>
+        <HBox maxWidth="Infinity"
+              HBox.hgrow="ALWAYS">
+            <AnchorPane
+                    HBox.hgrow="ALWAYS"
+                    maxWidth="150"
+                    minWidth="100">
+                <Button text="Previous"
+                        fx:id="prevButton"
+                        onAction="#onPrevButtonPressed"
+                        AnchorPane.leftAnchor="10"
+                        AnchorPane.rightAnchor="10"
+                />
+            </AnchorPane>
+            <AnchorPane HBox.hgrow="ALWAYS"
+                        maxWidth="150"
+                        minWidth="100">
+                <Button text="Next"
+                        fx:id="nextButton"
+                        onAction="#onNextButtonPressed"
+                        AnchorPane.leftAnchor="10"
+                        AnchorPane.rightAnchor="10"
+                />
+            </AnchorPane>
+        </HBox>
+        <HBox alignment="TOP_RIGHT"
+              maxWidth="Infinity"
+              HBox.hgrow="ALWAYS">
+            <AnchorPane
+                    HBox.hgrow="ALWAYS"
+                    maxWidth="150"
+                    minWidth="100">
+                <Button text="Save"
+                        fx:id="saveButton"
+                        onAction="#onSaveButtonPressed"
+                        AnchorPane.leftAnchor="10"
+                        AnchorPane.rightAnchor="10"
+                />
+            </AnchorPane>
+        </HBox>
+    </HBox>
+</VBox>
